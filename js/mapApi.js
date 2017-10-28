@@ -3,12 +3,18 @@ function initMap(locations, userlat, userlng) {
         return null;
     }
     var center = new google.maps.LatLng(userlat, userlng);
+    
+    var styledMapType = new google.maps.StyledMapType(styledText);
+    
 
     var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 3,
+          zoom: 14,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
+    
+    map.mapTypes.set('styled_map', styledMapType);
+    map.setMapTypeId('styled_map');
     
     var markers = [];
     

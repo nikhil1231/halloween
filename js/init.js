@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#postcode-button').click(function(){
+	$('#postcode-button').click(function(evt){
 		var postcode = $('#postcode-input').val();
 		if(valid_postcode(postcode)){
 			$.ajax("http://api.postcodes.io/postcodes/" + postcode.replace(/\s/g,''),{
@@ -15,8 +15,8 @@ $(document).ready(function(){
 		}else{
 			alert("Invalid postcode.")
 		}
+        evt.preventDefault(); 
 	})
-
 })
 
 function valid_postcode(postcode) {
