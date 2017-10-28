@@ -13,15 +13,10 @@ if (month < 10){
 console.log(previousDate);
 console.log(month + " " + year);
 
-var userlat = parseFloat(52.627161);
-var userlng = parseFloat(-1.131592);
 
-var requestURL = "https://data.police.uk/api/crimes-street/all-crime?lat=" + userlat + "&lng=" + userlng + "&date=" + year + "-" + month;
-
-console.log(requestURL);
-
-
-function getData(){
+function getData(lat, lng){
+    var requestURL = "https://data.police.uk/api/crimes-street/all-crime?lat=" + lat + "&lng=" + lng + "&date=" + year + "-" + month;
+    console.log(requestURL)
     $.get(requestURL, function(data){
         
     }).done(function(data) {
@@ -33,8 +28,8 @@ function getData(){
         console.log(locations.length);
         console.log(locations);
         
-        initMap(locations, userlat, userlng);
+        initMap(locations, lat, lng);
   });
 }
 
-getData();
+// getData();

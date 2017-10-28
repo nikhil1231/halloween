@@ -1,14 +1,12 @@
-var userlat = "";
-var userlng = "";
-
 $(document).ready(function(){
 	$('#postcode-button').click(function(){
 		var postcode = $('#postcode-input').val();
 		if(valid_postcode(postcode)){
 			$.ajax("http://api.postcodes.io/postcodes/" + postcode.replace(/\s/g,''),{
 				success: function(data){
-					userlat = data.result.latitude;
-					userlng = data.result.longitude;
+					var userlat = parseFloat(data.result.latitude);
+					var userlng = parseFloat(data.result.longitude);
+					getData(userlat, userlng);
 				},
 				error: function(err){
 					console.log(err);
