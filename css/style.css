@@ -30,7 +30,11 @@
 
 .map{
   width: 100%;
-  
+}
+
+.logo{
+  width: 500px;
+  text-align: center;
 }
 
 nav ul a,
