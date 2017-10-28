@@ -6,6 +6,6 @@
  
  ## Developers
  
- Design/Logo Creation: 
- Front-End:
+ Design/Logo Creation: <br />
+ Front-End: <br />
  Back-End: Amanda J. Kendal-Brown
