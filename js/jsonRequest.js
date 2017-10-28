@@ -20,17 +20,11 @@ var requestURL = "https://data.police.uk/api/crimes-street/all-crime?lat=" + use
 
 console.log(requestURL);
 
-request.open('GET', requestURL, true);
-request.responseType = 'json';
-request.send();
 
-function returnLocation(){
-    "use strict";
-    var fullLocations = request.response;
-    
-    console.log(fullLocations);
-    
-    
+function getData(){
+    $.get(requestURL, function(data){
+        console.log(data);
+    });
 }
 
-returnLocation();
+getData();
