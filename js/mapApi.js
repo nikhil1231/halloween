@@ -5,9 +5,13 @@ function initMap(locations, userlat, userlng) {
     console.trace();
     console.log("here initMap " + locations.length);
     var center = new google.maps.LatLng(userlat, userlng);
-    var options = {};
+
     
-    var map = new google.maps.Map(document.querySelector("#map"), options);
+    var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: center,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
     
     var markers = [];
     
