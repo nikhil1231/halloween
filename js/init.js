@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$('#postcode-button').click(function(evt){
 		var postcode = $('#postcode-input').val();
 		if(valid_postcode(postcode)){
-			$.ajax("http://api.postcodes.io/postcodes/" + postcode.replace(/\s/g,''),{
+			$.ajax("https://api.postcodes.io/postcodes/" + postcode.replace(/\s/g,''),{
 				success: function(data){
 					var userlat = parseFloat(data.result.latitude);
 					var userlng = parseFloat(data.result.longitude);
