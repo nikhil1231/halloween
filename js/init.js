@@ -1,3 +1,6 @@
+var userlat = "";
+var userlng = "";
+
 $(document).ready(function(){
 	var postcode = "se21 8ae";
 
