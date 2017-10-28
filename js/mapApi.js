@@ -6,12 +6,20 @@ function initMap(locations, userlat, userlng) {
     
     var styledMapType = new google.maps.StyledMapType(styledText);
     
-
     var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           center: center,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: 'hybrid'
         });
+    
+    var image = "../images/pinpoint.png";
+    console.log(image);
+    
+    var oneCrimeMaker = new google.maps.Marker({
+          position: {lat: userlat, lng: userlng},
+          map: map,
+          icon: image
+    });
     
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
@@ -22,14 +30,12 @@ function initMap(locations, userlat, userlng) {
         var latLng = new google.maps.LatLng(locations[i].lat,
       locations[i].lng);
         
-        console.log(latLng);
         var marker = new google.maps.Marker({'position': latLng});
         markers.push(marker);
 
     }
    
     var markerCluster = new MarkerClusterer(map, markers);
-    
 }
       
       
