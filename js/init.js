@@ -2,20 +2,23 @@ var userlat = "";
 var userlng = "";
 
 $(document).ready(function(){
-	var postcode = "se21 8ae";
-
-	$('#postcode-input').click(function(){
-		
-	})
-
-	$.ajax("http://api.postcodes.io/postcodes/" + postcode.replace(/\s/g,''),{
-		success: function(data){
-			console.log(data);
-		},
-		error: function(err){
-			console.log(err);
+	$('#postcode-button').click(function(){
+		var postcode = $('#postcode-input').val();
+		if(valid_postcode(postcode)){
+			$.ajax("http://api.postcodes.io/postcodes/" + postcode.replace(/\s/g,''),{
+				success: function(data){
+					userlat = data.result.latitude;
+					userlng = data.result.longitude;
+				},
+				error: function(err){
+					console.log(err);
+				}
+			})
+		}else{
+			alert("Invalid postcode.")
 		}
 	})
+
 })
 
 function valid_postcode(postcode) {
