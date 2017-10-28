@@ -1,5 +1,4 @@
 //API https://data.police.uk/docs/method/crime-street/
-
 var request = new XMLHttpRequest();
 var date = new Date();
 var previousDate = new Date(date.setMonth(date.getMonth() - 1));
