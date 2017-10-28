@@ -8,10 +8,31 @@
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous">
   </script>
+    
+    <script src="js/jsonRequest.js" type="text/javascript"></script>
+  <script src="js/mapApi.js" type="text/javascript"></script>
+
+  <script src="js/markerclusterer.js" type="text/javascript"></script>
+    
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIKVYnGfp5RRYGdnJPSx0Jji00_OcukIY&callback=initMap">
+  </script>
 
   <style>
+      #map-container {
+        padding: 6px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #ccc #ccc #999 #ccc;
+        -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+        -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+        box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+        width: 600px;
+      }
+
       #map {
-        height: 100%;
+        width: 500px;
+        height: 500px;
       }
   </style>
   <title>SpookSafe</title>
@@ -46,7 +67,7 @@
   </div>
 
   <div class="container">
-    <div id="map"></div>
+    <div id="map-container"><div id="map"></div></div>
   </div>
 
   <div class="container">
@@ -91,13 +112,8 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/jsonRequest.js" type="text/javascript"></script>
-  <script src="js/mapApi.js" type="text/javascript"></script>
-
-  <script src="js/markerclusterer.js" type="text/javascript"></script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIKVYnGfp5RRYGdnJPSx0Jji00_OcukIY&callback=initMap">
-  </script>
+  
+  
 
   </body>
 </html>
