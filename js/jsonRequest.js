@@ -10,10 +10,6 @@ if (month < 10){
     month = ("0" + month);
 }
 
-console.log(previousDate);
-console.log(month + " " + year);
-
-
 function getData(lat, lng){
     var requestURL = "https://data.police.uk/api/crimes-street/all-crime?lat=" + lat + "&lng=" + lng + "&date=" + year + "-" + month;
     console.log(requestURL)
@@ -32,5 +28,3 @@ function getData(lat, lng){
         $('#map-container').show();
   });
 }
-
-// getData();
