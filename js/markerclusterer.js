@@ -1611,7 +1611,7 @@ MarkerClusterer.BATCH_SIZE_IE = 500;
  * @type {string}
  * @constant
  */
-MarkerClusterer.IMAGE_PATH = "../images/m";
+MarkerClusterer.IMAGE_PATH = "/images/m";
 
 
 /**
