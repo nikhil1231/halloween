@@ -29,6 +29,7 @@ function getData(lat, lng){
         console.log(locations);
         
         initMap(locations, lat, lng);
+        $('#map-container').show();
   });
 }
 
