@@ -23,14 +23,18 @@ console.log(requestURL);
 
 function getData(){
     $.get(requestURL, function(data){
+        
+    }).done(function(data) {
+        
         var locations = [];
         for (var count = 0; count < data.length; count ++){
             locations.push({lat : parseFloat(data[count].location.latitude), lng : parseFloat(data[count].location.longitude) });
         }
+        console.log(locations.length);
         console.log(locations);
         
         initMap(locations, userlat, userlng);
-    });
+  });
 }
 
 getData();
