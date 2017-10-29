@@ -12,8 +12,7 @@ function initMap(locations, userlat, userlng) {
           mapTypeId: 'hybrid'
         });
     
-    var image = "../image/pinpoint.png";
-    console.log(image);
+    var image = "../img/pinpoint.png";
     
     var oneCrimeMaker = new google.maps.Marker({
           position: {lat: userlat, lng: userlng},
