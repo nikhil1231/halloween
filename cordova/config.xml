@@ -25,6 +25,7 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <engine name="android" spec="~6.3.0" />
+    <engine name="ios" spec="^4.5.2" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="cordova-plugin-statusbar" spec="^2.2.3" />
 </widget>

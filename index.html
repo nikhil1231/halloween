@@ -16,7 +16,7 @@
 
 
   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIKVYnGfp5RRYGdnJPSx0Jji00_OcukIY&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIKVYnGfp5RRYGdnJPSx0Jji00_OcukIY&callback=initMap&libraries=visualization">
   </script>
   <title>SpookSafe</title>
 
@@ -43,6 +43,8 @@
             <span id='postcode-error'> </span>
           </div>
           <a id="postcode-button" class="btn-large waves-effect waves-light orange">Go</a>
+          <p>OR</p>
+          <a id="location-button" class="btn-large waves-effect waves-light orange">Use location</a>
         </div>
       </div>
       <br><br>
@@ -51,7 +53,14 @@
   </div>
 
   <div class="container">
-    <div id="map-container"><div id="map"></div></div>
+    <div id="map-container">
+      <div class='header'>
+        <i id='back-button' class="material-icons">arrow_back</i>
+        <i id='togglemap' class="material-icons">location_searching</i>
+        <i id='toggleheatmap' class="material-icons">landscape</i>
+      </div>
+      <div id="map"></div>
+    </div>
   </div>
 
   <div class="container">

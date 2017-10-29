@@ -21,41 +21,35 @@ var app = {
 
 app.initialize();
 
-// function listDir(path){
-//   window.resolveLocalFileSystemURL(path,
-//     function (fileSystem) {
-//       var reader = fileSystem.createReader();
-//       reader.readEntries(
-//         function (entries) {
-//           console.log(entries);
-//         },
-//         function (err) {
-//           console.log(err);
-//         }
-//       );
-//     }, function (err) {
-//       console.log(err);
-//     }
-//   );
-// }
-
-
-
 // onReady();
 
 function onReady(){
 	$('#postcode-button').click(function(evt){
 		getMap(evt); 
 	});
-	$('#postcode-input').bind("enterKey",function(e){
+	$('#postcode-input').bind("enterKey",function(evt){
 		getMap(evt);
 	});
+	$('#location-button').click(function(evt){
+		if (navigator.geolocation) {
+        	navigator.geolocation.watchPosition(showPos);
+			
+			$("#postcode-error").html('Loading...');
+	    } else {
+	        $("#postcode-error").html('Location unavailable');
+	    }
+	});
+
 	$('#postcode-input').keyup(function(e){
 	    if(e.keyCode == 13)
 	    {
 	        $(this).trigger("enterKey");
 	    }
 	});
+}
+
+function showPos(pos){
+	getData(pos.coords.latitude, pos.coords.longitude);
 }
 
 function getMap(e){
@@ -66,7 +60,7 @@ function getMap(e){
 				var userlat = parseFloat(data.result.latitude);
 				var userlng = parseFloat(data.result.longitude);
 				getData(userlat, userlng);
-				$("#postcode-error").html('');
+				$("#postcode-error").html('Loading...');
 			},
 			error: function(XHR, stat, err){
 				console.log(err);
