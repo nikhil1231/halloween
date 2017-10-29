@@ -21,13 +21,19 @@ function getMap(e){
 				var userlat = parseFloat(data.result.latitude);
 				var userlng = parseFloat(data.result.longitude);
 				getData(userlat, userlng);
+				$("#postcode-error").html('');
 			},
-			error: function(err){
+			error: function(XHR, stat, err){
 				console.log(err);
+				if(err == "Not Found"){
+					$("#postcode-error").html("Postcode not found, please try again.");
+				}else{
+					$("#postcode-error").html(err);
+				}
 			}
 		})
 	}else{
-		alert("Invalid postcode.")
+		$("#postcode-error").html("Invalid postcode.");
 	}
     e.preventDefault();
 }

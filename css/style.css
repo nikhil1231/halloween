@@ -32,6 +32,19 @@ body, html{
   margin: 60px auto 0;
 }
 
+.input-container div{
+  text-align: left;
+}
+
+#postcode-error{
+  color: #F44336;
+  font-size: 12px;
+}
+
+#postcode-input{
+  margin: 0;
+}
+
 #map-container {
   padding: 6px;
   border-width: 1px;

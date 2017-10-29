@@ -7,7 +7,7 @@ function initMap(locations, userlat, userlng) {
     var styledMapType = new google.maps.StyledMapType(styledText);
     
     var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
+          zoom: 15,
           center: center,
           mapTypeId: 'hybrid'
         });

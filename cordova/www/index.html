@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; media-src *; img-src * data: content:;">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" /> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+    <script src="js/style.js" type="text/javascript"></script>
+    <script src="js/jsonRequest.js" type="text/javascript"></script>
+  <script src="js/mapApi.js" type="text/javascript"></script>
+
+  <script src="js/markerclusterer.js" type="text/javascript"></script>
+
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIKVYnGfp5RRYGdnJPSx0Jji00_OcukIY&callback=initMap&libraries=visualization">
+  </script>
+  <title>SpookSafe</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+    <div class='header grey'>
+        <i id='back-button button' class="material-icons">arrow_back</i>
+        <i id='togglemap button' class="material-icons">location_searching</i>
+        <i id='toggleheatmap button' class="material-icons">landscape</i>
+    </div>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <div class='row center'>
+        <img class='logo' src = "img/logo.png">
+      </div>
+      <div class="row center">
+        <h5 class="header col s12 light">Find out which streets are safe to trick or treat in.</h5>
+      </div>
+      <div class="row center">
+        <div class='input-container'>
+          <div class="input-field col s6">
+            <input id="postcode-input" type="text" class="validate">
+            <label for="postcode-input">Postcode</label>
+            <span id='postcode-error'> </span>
+          </div>
+          <a id="postcode-button" class="btn-large waves-effect waves-light orange">Go</a>
+        </div>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+   <div id="map"></div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="cordova.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
