@@ -30,15 +30,6 @@ function onReady(){
 	$('#postcode-input').bind("enterKey",function(evt){
 		getMap(evt);
 	});
-	$('#location-button').click(function(evt){
-		if (navigator.geolocation) {
-        	navigator.geolocation.watchPosition(showPos);
-			
-			$("#postcode-error").html('Loading...');
-	    } else {
-	        $("#postcode-error").html('Location unavailable');
-	    }
-	});
 
 	$('#postcode-input').keyup(function(e){
 	    if(e.keyCode == 13)
@@ -46,10 +37,6 @@ function onReady(){
 	        $(this).trigger("enterKey");
 	    }
 	});
-}
-
-function showPos(pos){
-	getData(pos.coords.latitude, pos.coords.longitude);
 }
 
 function getMap(e){
