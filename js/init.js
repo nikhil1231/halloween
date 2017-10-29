@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	$('#postcode-button').click(function(evt){
-		getMap(); 
+		getMap(evt); 
 	});
 	$('#postcode-input').bind("enterKey",function(e){
-		getMap();
+		getMap(evt);
 	});
 	$('#postcode-input').keyup(function(e){
 	    if(e.keyCode == 13)
@@ -13,7 +13,7 @@ $(document).ready(function(){
 	});
 })
 
-function getMap(){
+function getMap(e){
 	var postcode = $('#postcode-input').val();
 	if(valid_postcode(postcode)){
 		$.ajax("https://api.postcodes.io/postcodes/" + postcode.replace(/\s/g,''),{
@@ -29,7 +29,7 @@ function getMap(){
 	}else{
 		alert("Invalid postcode.")
 	}
-    evt.preventDefault();
+    e.preventDefault();
 }
 
 function valid_postcode(postcode) {
