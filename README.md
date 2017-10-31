@@ -11,3 +11,8 @@
  Design/Logo Creation: Fino<br />
  Front-End: Nikhil Kunde<br />
  Back-End: Amanda J. Kendal-Brown
+
+## Notice
+
+In order to use the "Use Location" Feature, please use the GitHub Pages link, due to limitations with HTTP and Chrome<br />
+GitPages Link: [SpookSafe](https://nikhil1231.github.io/halloween/)
