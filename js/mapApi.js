@@ -53,10 +53,13 @@ function initMap(locations, userlat, userlng) {
     var markers = [];
     
     for (var i = 0; i < locations.length; i++){
-        var latLng = new google.maps.LatLng(locations[i].lat,locations[i].lng);
-
         
-        var heatmarker = new google.maps.LatLng(locations[i].lat, locations[i].lng);
+        var latitude = parseFloat(locations[i].location.latitude);
+        var longitude = parseFloat(locations[i].location.longitude);
+        
+        var latLng = new google.maps.LatLng(latitude,longitude);
+
+        var heatmarker = new google.maps.LatLng(latitude,longitude);
         heatmarkers.push(heatmarker);
 
         var marker = new google.maps.Marker({'position': latLng});

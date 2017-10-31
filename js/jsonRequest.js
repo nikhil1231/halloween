@@ -1,7 +1,7 @@
 //API https://data.police.uk/docs/method/crime-street/
 var request = new XMLHttpRequest();
 var date = new Date();
-var previousDate = new Date(date.setMonth(date.getMonth() - 1));
+var previousDate = new Date(date.setMonth(date.getMonth() - 2));
 var month = previousDate.getMonth();
 var year = previousDate.getFullYear();
 
@@ -15,12 +15,7 @@ function getData(lat, lng){
         
     }).done(function(data) {
         
-        var locations = [];
-        for (var count = 0; count < data.length; count ++){
-            locations.push({lat : parseFloat(data[count].location.latitude), lng : parseFloat(data[count].location.longitude) });
-        }
-        
-        initMap(locations, lat, lng);
+        initMap(data, lat, lng);
         $('#map-container').show();
   });
 }
